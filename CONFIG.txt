@@ -1,0 +1,105 @@
+//pourquoi pas les droits dans DATA????
+
+
+
+git clone "URL"
+
+git pull
+
+git config credential.helper store // pour enregistrer les ID
+
+
+
+
+
+
+
+DEBUT DE TRAVAIL:
+	git pull // pour mettre a jour le repertoire en local 
+	
+
+POUR L'UPLOAD:
+	git add NOMFICHIER
+	git commit
+	git pull
+	git push
+
+
+------Paramétrage supplémentaire-------------
+
+Des configurations supplémentaires peuvent être requises en fonction de l'environnement de travail.
+
+---UNIX-----
+Pour les machines de l'écoles, afin de pouvoir utiliser l'ensemble des commandes git en se placant sur le disque H: qui est la partition partagée entre les deux OS,
+un problème de droit apparait. Pour résoudre ce problème on utilisera la commande "sudo" qui nous placera en mode administrateur sur la machine.
+Pour ne pas avoir à répéter cette opération à chaque ligne de commande on pourra utiliser un alias qu'on placera dans le fichier bashrc comme suit:
+
+
+ETABLIR LA PROCEDURE
+
+
+---WINDOWS----
+
+Il est possible de configurer VScode sur Windows pour utiliser git.
+Pour cela effectuer la procédure suivante:
+
+Configuration de git sur VScode:
+
+-Télécharger git(https://git-scm.com/download/win)
+
+-Modifier le chemin de git sous VScode:
+	-Manage->settings puis taper "type &rarr the path to the Git executable" dans la barre de recherche
+	-Cliquer sur  "Edit in settings.json"
+	-Ajouter le Chemin correspondant au fichier git.exe (Note: les "\" des chemins windows devront être remplacé par des "/")
+
+-Paramétrer git en insérant votre nom d'utilisateur et email github.
+	-git config --global user.email "you@example.com"
+	-git config --global user.name "Your Name"
+
+	-On pourra utiliser "git config credential.helper store" pour enregistrer les ID github
+
+
+Note: Lors de la première tentative de connexion avec github, il sera demander de se connecter sur le navigateur.	
+
+Git est maintenant configurer pour VScode mais pas pour le terminal.
+
+
+
+
+
+Configuration du git sur un terminal sous windows:
+
+-Télécharger git(https://git-scm.com/download/win)
+
+-Dans le menu Démarrer ou la recherche dans la barre des tâches, recherchez «variable d'environnement».
+
+-Sélectionnez "Modifier les variables d'environnement système"
+
+-Cliquez sur le bouton "Variables d'environnement" en bas.
+
+-Double-cliquez sur l'entrée "Chemin"(path en anglais) sous "Variables système".
+
+-Avec le bouton "Nouveau" dans l'éditeur PATH, ajoutez C:\Program Files\Git\bin\et C:\Program Files\Git\cmd\à la fin de la liste. 
+	-Il faut utiliser les répertoires propre à votre installation
+
+
+
+Configuration d'un Environnement de travail pour python sur VSCode window:
+	
+	-Télécharger un interpreteur python (https://www.python.org/downloads/)
+
+	-Installer l'interpreteur
+
+	-Sur un environnement window: exécuter les commandes de la forme: py -3 #NomDeMonFichier.py
+
+	Vous pouvez désormais travailler et exécuter votre script python
+
+
+Ajout d'une bibliothèque python dans windows: // attention, il semble que l'interpréteur python soit différent dans le terminal a la racine que dans le repertoire du projet
+Dans le terminal:
+	-Saisissez: "py -m pip install requests" qui verifieras s'il y a besoin de mettre a jour pip
+	
+	-Saisissez: "H:\python.exe -m pip install --upgrade pip" qui mettras à jour pip (cette commande ou un equivalent sera donné a la fin de l'exécution de la précédente)
+pip est maintenant à jour, il ne reste plus qu'à installer les librairies concernées avec une commande du type:
+	"pip install numpy"
+	

@@ -1,0 +1,4 @@
+colonne;type;A;B
+q0;3;q1;q2
+q1;0;q1;q0,q2
+q2;0;q2;q0
